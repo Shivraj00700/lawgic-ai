@@ -1,0 +1,175 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-tile-active: var(--tile-active);
+  --color-android: var(--android);
+  --color-ios: var(--ios);
+  --color-macos: var(--macos);
+  /* Urgency triage tiers. A single --destructive cannot express three levels. */
+  --color-urgency-red: var(--urgency-red);
+  --color-urgency-red-foreground: var(--urgency-red-foreground);
+  --color-urgency-red-surface: var(--urgency-red-surface);
+  --color-urgency-amber: var(--urgency-amber);
+  --color-urgency-amber-foreground: var(--urgency-amber-foreground);
+  --color-urgency-amber-surface: var(--urgency-amber-surface);
+  --color-urgency-green: var(--urgency-green);
+  --color-urgency-green-foreground: var(--urgency-green-foreground);
+  --color-urgency-green-surface: var(--urgency-green-surface);
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.995 0.002 250);
+  --foreground: oklch(0.22 0.01 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.01 260);
+  --primary: oklch(0.24 0.012 265);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.968 0.005 250);
+  --secondary-foreground: oklch(0.28 0.012 265);
+  --muted: oklch(0.968 0.005 250);
+  --muted-foreground: oklch(0.55 0.015 260);
+  --accent: oklch(0.96 0.01 255);
+  --accent-foreground: oklch(0.28 0.012 265);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.93 0.006 255);
+  --input: oklch(0.93 0.006 255);
+  --ring: oklch(0.75 0.05 265);
+  --tile-active: oklch(0.9 0.055 235);
+  --android: oklch(0.9 0.05 235);
+  --ios: oklch(0.9 0.06 320);
+  --macos: oklch(0.93 0.06 145);
+  /* Urgency triage. `-surface` is the tinted background, the base is for
+     borders and icons, `-foreground` is body text that must stay readable. */
+  --urgency-red: oklch(0.55 0.21 25);
+  --urgency-red-foreground: oklch(0.35 0.15 25);
+  --urgency-red-surface: oklch(0.96 0.03 25);
+  --urgency-amber: oklch(0.68 0.15 65);
+  --urgency-amber-foreground: oklch(0.42 0.11 65);
+  --urgency-amber-surface: oklch(0.97 0.035 80);
+  --urgency-green: oklch(0.6 0.13 150);
+  --urgency-green-foreground: oklch(0.38 0.09 150);
+  --urgency-green-surface: oklch(0.96 0.03 150);
+  --page-gradient: linear-gradient(
+    135deg,
+    oklch(0.78 0.09 285) 0%,
+    oklch(0.86 0.06 300) 35%,
+    oklch(0.9 0.05 20) 65%,
+    oklch(0.8 0.09 280) 100%
+  );
+  --canvas-gradient: linear-gradient(
+    160deg,
+    oklch(0.97 0.02 240) 0%,
+    oklch(0.99 0.008 250) 40%,
+    oklch(0.98 0.02 20) 75%,
+    oklch(0.97 0.025 300) 100%
+  );
+}
+
+.dark {
+  --background: oklch(0.16 0.015 265);
+  --foreground: oklch(0.98 0.003 250);
+  --card: oklch(0.21 0.02 265);
+  --card-foreground: oklch(0.98 0.003 250);
+  --popover: oklch(0.21 0.02 265);
+  --popover-foreground: oklch(0.98 0.003 250);
+  --primary: oklch(0.93 0.01 255);
+  --primary-foreground: oklch(0.21 0.02 265);
+  --secondary: oklch(0.28 0.02 260);
+  --secondary-foreground: oklch(0.98 0.003 250);
+  --muted: oklch(0.28 0.02 260);
+  --muted-foreground: oklch(0.7 0.02 257);
+  --accent: oklch(0.28 0.02 260);
+  --accent-foreground: oklch(0.98 0.003 250);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0.03 264);
+  --urgency-red: oklch(0.7 0.19 25);
+  --urgency-red-foreground: oklch(0.92 0.05 25);
+  --urgency-red-surface: oklch(0.3 0.09 25);
+  --urgency-amber: oklch(0.8 0.14 70);
+  --urgency-amber-foreground: oklch(0.95 0.05 80);
+  --urgency-amber-surface: oklch(0.32 0.07 70);
+  --urgency-green: oklch(0.75 0.13 150);
+  --urgency-green-foreground: oklch(0.93 0.05 150);
+  --urgency-green-surface: oklch(0.28 0.06 150);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@utility page-gradient {
+  background-image: var(--page-gradient);
+}
+
+@utility canvas-gradient {
+  background-image: var(--canvas-gradient);
+}
+
+/* Orb "thinking" state. Motion is opt-out via prefers-reduced-motion, where it
+   degrades to a still opacity shift so the state is still perceivable. */
+@keyframes orb-think {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@utility orb-thinking {
+  animation: orb-think 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-thinking {
+    animation: none;
+    opacity: 0.9;
+  }
+}
