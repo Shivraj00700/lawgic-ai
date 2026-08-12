@@ -39,6 +39,22 @@ export const LAWS: LawSource[] = [
       "If something you bought is defective, or a service you paid for was not delivered properly, you can file a complaint with the District Consumer Disputes Redressal Commission where you live or where the seller operates. You can file it yourself — a lawyer is not required — and it can be filed online. There is no court fee for claims up to five lakh rupees.",
     plain_hi:
       "अगर आपका खरीदा हुआ सामान ख़राब है, या जिस सेवा के आपने पैसे दिए वह ठीक से नहीं मिली, तो आप अपने ज़िले के या विक्रेता के ज़िले के उपभोक्ता विवाद प्रतितोषण आयोग में शिकायत दर्ज कर सकते हैं। आप खुद शिकायत कर सकते हैं — वकील ज़रूरी नहीं है — और यह ऑनलाइन भी दर्ज हो सकती है। पाँच लाख रुपये तक के दावों पर कोई कोर्ट फ़ीस नहीं लगती।",
+    rights_en: [
+      "You can file the complaint yourself. A lawyer is not required.",
+      "You can file where you live, not only where the seller is based.",
+    ],
+    rights_hi: [
+      "आप खुद शिकायत दर्ज कर सकते हैं। वकील ज़रूरी नहीं है।",
+      "आप वहाँ शिकायत कर सकते हैं जहाँ आप रहते हैं, केवल विक्रेता के शहर में नहीं।",
+    ],
+    steps_en: [
+      "Collect your bill, warranty card, and any message or email with the seller.",
+      "File online on the National Consumer Helpline portal, or in person at your District Commission.",
+    ],
+    steps_hi: [
+      "अपना बिल, वारंटी कार्ड, और विक्रेता से हुई कोई भी बातचीत या ईमेल जमा कीजिए।",
+      "राष्ट्रीय उपभोक्ता हेल्पलाइन पोर्टल पर ऑनलाइन, या अपने ज़िला आयोग में जाकर शिकायत दर्ज कीजिए।",
+    ],
     category: "consumer",
     beneficiaryTags: ["consumers", "allCitizens"],
     stateScope: "IN",
@@ -102,6 +118,22 @@ export const LAWS: LawSource[] = [
       "If the Commission agrees with you, it can order the seller to remove the defect, replace the product with a new one, return the price you paid, or pay you compensation for the loss and suffering caused. It can also order the seller to stop an unfair practice and to pay your legal costs. You are not limited to whatever the shop's own return policy says.",
     plain_hi:
       "अगर आयोग आपकी बात मानता है, तो वह विक्रेता को आदेश दे सकता है कि खराबी ठीक करे, सामान नया बदलकर दे, आपके दिए पैसे लौटाए, या हुए नुकसान और परेशानी का मुआवज़ा दे। आयोग विक्रेता को अनुचित व्यापार बंद करने और आपका खर्च देने का आदेश भी दे सकता है। दुकान की अपनी वापसी नीति आपकी सीमा नहीं है।",
+    rights_en: [
+      "You can ask for a refund, a replacement, or a repair — the shop's own return policy is not your limit.",
+      "You can also claim compensation for the loss and the inconvenience caused.",
+    ],
+    rights_hi: [
+      "आप पैसे वापसी, बदली, या मरम्मत माँग सकते हैं — दुकान की वापसी नीति आपकी सीमा नहीं है।",
+      "आप हुए नुकसान और परेशानी के लिए मुआवज़ा भी माँग सकते हैं।",
+    ],
+    steps_en: [
+      "Decide exactly what you are asking for: refund, replacement, or repair, plus compensation.",
+      "Send the seller a written notice first, and keep a copy as proof that you asked.",
+    ],
+    steps_hi: [
+      "तय कीजिए कि आप ठीक क्या माँग रहे हैं: पैसे वापसी, बदली, या मरम्मत, साथ में मुआवज़ा।",
+      "पहले विक्रेता को लिखित सूचना भेजिए, और एक प्रति सबूत के तौर पर अपने पास रखिए।",
+    ],
     category: "consumer",
     beneficiaryTags: ["consumers", "allCitizens"],
     stateScope: "IN",
@@ -152,6 +184,22 @@ export const LAWS: LawSource[] = [
       "A landlord cannot demand more than two months' rent as a security deposit for a home (six months for non-residential use). When you vacate and hand back the property, the landlord must return the deposit on the same day, after deducting only what is genuinely owed — unpaid rent or the cost of damage you caused. Normal wear and tear is not damage. Note: this is a model law, so it applies in the states that have adopted it; in other states your written rent agreement and the Transfer of Property Act govern the deposit.",
     plain_hi:
       "मकान मालिक घर के लिए दो महीने के किराये से ज़्यादा जमा राशि नहीं माँग सकता (गैर-आवासीय उपयोग के लिए छह महीने)। जब आप मकान खाली करके कब्ज़ा लौटाते हैं, तो मकान मालिक को उसी दिन जमा राशि लौटानी होगी, और उसमें से केवल वही काटा जा सकता है जो सचमुच बाकी है — बचा हुआ किराया या आपके किए नुकसान की लागत। सामान्य टूट-फूट नुकसान नहीं मानी जाती। ध्यान दें: यह एक आदर्श कानून है, इसलिए यह उन राज्यों में लागू है जिन्होंने इसे अपनाया है; बाकी राज्यों में आपका लिखित किरायानामा और संपत्ति अंतरण अधिनियम लागू होंगे।",
+    rights_en: [
+      "Your security deposit cannot be more than two months' rent for a home.",
+      "It must be returned when you hand back the property, with only genuine dues deducted. Normal wear and tear is not damage.",
+    ],
+    rights_hi: [
+      "घर के लिए आपकी जमा राशि दो महीने के किराये से ज़्यादा नहीं हो सकती।",
+      "कब्ज़ा लौटाते समय वह वापस मिलनी चाहिए, और केवल सचमुच बाकी रकम काटी जा सकती है। सामान्य टूट-फूट नुकसान नहीं है।",
+    ],
+    steps_en: [
+      "Take dated photographs of every room as you leave, and get the handover acknowledged in writing.",
+      "Send a written demand for the refund. If it is ignored, approach the Rent Authority in your area.",
+    ],
+    steps_hi: [
+      "जाते समय हर कमरे की तारीख़ वाली तस्वीरें लीजिए, और कब्ज़ा लौटाने की लिखित पावती लीजिए।",
+      "पैसे वापसी की लिखित माँग भेजिए। अनसुना करने पर अपने क्षेत्र के किराया प्राधिकरण के पास जाइए।",
+    ],
     category: "housing",
     beneficiaryTags: ["tenants", "allCitizens"],
     stateScope: "IN",
@@ -211,17 +259,46 @@ export const LAWS: LawSource[] = [
       "Your landlord cannot cut off or withhold essential supplies and services — water, electricity, lifts, sanitation — to pressure you into leaving. If they do, you can apply to the Competent Authority for an order restoring the supply, and the Authority can also award you compensation. Cutting off utilities is not a lawful way to evict anyone; eviction requires a proper legal order.",
     plain_hi:
       "आपका मकान मालिक आपको छोड़ने पर मजबूर करने के लिए ज़रूरी सुविधाएँ — पानी, बिजली, लिफ्ट, सफ़ाई — नहीं काट सकता और न रोक सकता है। अगर वह ऐसा करता है, तो आप सक्षम प्राधिकारी के पास आवेदन कर सकते हैं कि सुविधा बहाल करने का आदेश दिया जाए, और प्राधिकारी आपको मुआवज़ा भी दे सकता है। सुविधाएँ काटना किसी को निकालने का कानूनी तरीका नहीं है; बेदख़ली के लिए विधिवत आदेश ज़रूरी है।",
+    rights_en: [
+      "Your landlord cannot cut off your water, electricity, lift, or sanitation to pressure you into leaving.",
+      "You can be awarded compensation, and eviction still requires a proper legal order.",
+    ],
+    rights_hi: [
+      "मकान मालिक आपको छोड़ने पर मजबूर करने के लिए पानी, बिजली, लिफ्ट, या सफ़ाई नहीं काट सकता।",
+      "आपको मुआवज़ा मिल सकता है, और बेदख़ली के लिए विधिवत कानूनी आदेश अब भी ज़रूरी है।",
+    ],
+    steps_en: [
+      "Record the cut-off with a photo or video showing the date.",
+      "Apply to the Competent Authority for an order restoring the supply.",
+    ],
+    steps_hi: [
+      "कटी हुई सुविधा की तारीख़ दिखाती तस्वीर या वीडियो बना लीजिए।",
+      "सुविधा बहाल करने के आदेश के लिए सक्षम प्राधिकारी के पास आवेदन कीजिए।",
+    ],
     category: "housing",
     beneficiaryTags: ["tenants"],
     stateScope: "MH",
     sourceUrl: indiaCode("Maharashtra Rent Control Act 1999"),
     keywords: [
+      // Phrasings must tolerate the words people actually put in between:
+      // "cut off MY water", "cut THE water". Rigid full phrases scored zero on
+      // natural sentences and the law never surfaced at all.
+      "cut off",
+      "cut off my water",
+      "cut my water",
+      "cut the water",
       "cut off water",
       "cut off electricity",
+      "water",
+      "electricity",
+      "disconnected",
       "no water",
       "no electricity",
       "essential supply",
+      "essential services",
       "forced out",
+      "force me out",
+      "forcing me out",
       "evict",
       "eviction",
       "throwing me out",
@@ -229,6 +306,9 @@ export const LAWS: LawSource[] = [
       "locked",
       "पानी काट",
       "बिजली काट",
+      "पानी",
+      "बिजली",
+      "काट दिया",
       "पानी नहीं",
       "बिजली नहीं",
       "निकाल रहा",
@@ -238,6 +318,9 @@ export const LAWS: LawSource[] = [
       "ताला",
       "pani kaat",
       "bijli kaat",
+      "pani",
+      "bijli",
+      "kaat diya",
       "pani nahi",
       "bijli nahi",
       "nikal raha",
@@ -258,6 +341,22 @@ export const LAWS: LawSource[] = [
       "Your employer must pay your wages before the end of the 7th day after the wage period, where fewer than a thousand people are employed, and before the 10th day elsewhere. If your employment ends, whether you resign or are dismissed, your final wages must be paid within two working days. Delaying your pay is not a management decision the employer is free to make — it is a breach of the law.",
     plain_hi:
       "आपके मालिक को आपकी मज़दूरी, जहाँ एक हज़ार से कम लोग काम करते हैं वहाँ मज़दूरी अवधि के बाद 7वें दिन से पहले, और बाकी जगहों पर 10वें दिन से पहले देनी होगी। अगर आपकी नौकरी ख़त्म होती है — आप छोड़ें या निकाले जाएँ — तो आख़िरी मज़दूरी दो कार्य दिवसों के भीतर मिलनी चाहिए। मज़दूरी में देरी करना मालिक की मर्ज़ी का फ़ैसला नहीं है — यह कानून का उल्लंघन है।",
+    rights_en: [
+      "Your wages must be paid by the 7th of the month in smaller workplaces, and by the 10th elsewhere.",
+      "If you leave or are dismissed, your final wages are due within two working days.",
+    ],
+    rights_hi: [
+      "छोटे कार्यस्थलों में आपकी मज़दूरी महीने की 7 तारीख़ तक, और बाकी जगह 10 तारीख़ तक मिलनी चाहिए।",
+      "नौकरी छोड़ने या निकाले जाने पर आख़िरी मज़दूरी दो कार्य दिवसों में देनी होगी।",
+    ],
+    steps_en: [
+      "Write down the exact dates and amounts you were not paid, and any proof you worked those days.",
+      "File a claim with the Authority under the Payment of Wages Act. There is no fee.",
+    ],
+    steps_hi: [
+      "जो तारीख़ें और रकम नहीं मिली, वे ठीक-ठीक लिख लीजिए, और काम करने का कोई सबूत रखिए।",
+      "मज़दूरी संदाय अधिनियम के तहत प्राधिकारी के पास दावा दायर कीजिए। कोई शुल्क नहीं लगता।",
+    ],
     category: "work",
     beneficiaryTags: ["workers"],
     stateScope: "IN",
@@ -314,6 +413,22 @@ export const LAWS: LawSource[] = [
       "Every state fixes a minimum wage for each kind of work, and no employer may pay below it — not even if you agreed to a lower amount. You can apply to the Authority appointed under this Act to recover the shortfall, and it can order the employer to pay up to ten times the amount short as compensation. An inspector or a trade union can file the claim on your behalf.",
     plain_hi:
       "हर राज्य हर तरह के काम के लिए न्यूनतम मज़दूरी तय करता है, और कोई मालिक उससे कम नहीं दे सकता — चाहे आपने कम पर हामी भर दी हो। आप इस अधिनियम के तहत नियुक्त प्राधिकारी के पास कमी वसूलने के लिए आवेदन कर सकते हैं, और वह मालिक को कम दी गई राशि का दस गुना तक मुआवज़ा देने का आदेश दे सकता है। निरीक्षक या ट्रेड यूनियन आपकी ओर से दावा दायर कर सकते हैं।",
+    rights_en: [
+      "You cannot be paid below your state's minimum wage, even if you agreed to less.",
+      "The Authority can order up to ten times the shortfall as compensation.",
+    ],
+    rights_hi: [
+      "आपको अपने राज्य की न्यूनतम मज़दूरी से कम नहीं दिया जा सकता, चाहे आपने कम पर हामी भरी हो।",
+      "प्राधिकारी कम दी गई राशि का दस गुना तक मुआवज़ा दिलवा सकता है।",
+    ],
+    steps_en: [
+      "Check your state's current minimum wage notification for your kind of work.",
+      "Apply to the Authority under the Minimum Wages Act. An inspector or a union can file it for you.",
+    ],
+    steps_hi: [
+      "अपने काम के लिए राज्य की मौजूदा न्यूनतम मज़दूरी अधिसूचना देख लीजिए।",
+      "न्यूनतम मज़दूरी अधिनियम के तहत प्राधिकारी को आवेदन दीजिए। निरीक्षक या यूनियन आपकी ओर से दायर कर सकते हैं।",
+    ],
     category: "work",
     beneficiaryTags: ["workers"],
     stateScope: "IN",
@@ -356,6 +471,22 @@ export const LAWS: LawSource[] = [
       "If a person has enough means but neglects or refuses to maintain their wife, their child who cannot support itself, or their parents who cannot support themselves, a Magistrate can order them to pay a monthly allowance. This applies regardless of religion. A wife living separately for a valid reason can still claim it, and the Magistrate can order interim maintenance while the case is going on, so you are not left with nothing during the wait.",
     plain_hi:
       "अगर किसी व्यक्ति के पास साधन हैं लेकिन वह अपनी पत्नी, अपने उस बच्चे जो खुद का भरण-पोषण नहीं कर सकता, या अपने उन माता-पिता जो खुद का भरण-पोषण नहीं कर सकते, की उपेक्षा करता है या मना करता है, तो मजिस्ट्रेट उसे मासिक भत्ता देने का आदेश दे सकते हैं। यह हर धर्म पर लागू होता है। जायज़ कारण से अलग रह रही पत्नी भी दावा कर सकती है, और मजिस्ट्रेट मुकदमे के दौरान अंतरिम भरण-पोषण का आदेश भी दे सकते हैं, ताकि इंतज़ार में आपके पास कुछ न हो, ऐसा न रहे।",
+    rights_en: [
+      "A person with enough means must maintain their wife, their dependent children, and their parents. This applies regardless of religion.",
+      "You can ask for interim maintenance while the case is still going on, so you are not left with nothing while you wait.",
+    ],
+    rights_hi: [
+      "साधन रखने वाले व्यक्ति को अपनी पत्नी, आश्रित बच्चों, और माता-पिता का भरण-पोषण करना होगा। यह हर धर्म पर लागू है।",
+      "मुकदमे के दौरान आप अंतरिम भरण-पोषण माँग सकते हैं, ताकि इंतज़ार में आपके पास कुछ न रहे, ऐसा न हो।",
+    ],
+    steps_en: [
+      "Gather any proof of the other person's income, and a list of your own monthly expenses.",
+      "Apply to the Magistrate where you live. Free legal aid can file the application for you.",
+    ],
+    steps_hi: [
+      "दूसरे व्यक्ति की आय का कोई सबूत, और अपने मासिक ख़र्च की सूची इकट्ठा कीजिए।",
+      "जहाँ आप रहते हैं वहाँ के मजिस्ट्रेट को आवेदन दीजिए। निःशुल्क कानूनी सहायता आपके लिए आवेदन दायर कर सकती है।",
+    ],
     category: "family",
     beneficiaryTags: ["women", "children", "seniorCitizens"],
     stateScope: "IN",
@@ -405,6 +536,22 @@ export const LAWS: LawSource[] = [
       "A daughter is a coparcener in her family's ancestral property by birth, in exactly the same way as a son, and has the same rights and the same liabilities. This is true whether she is married or unmarried, and the Supreme Court has confirmed it applies whether or not her father was alive on the date of the 2005 amendment. She can ask for her share to be divided out. Note: this Act does not apply to Scheduled Tribes, whose succession is governed by their own customs.",
     plain_hi:
       "बेटी जन्म से ही अपने परिवार की पैतृक संपत्ति में सहदायिक (कोपार्सनर) होती है, ठीक बेटे की तरह, और उसके वही अधिकार और वही दायित्व होते हैं। यह विवाहित और अविवाहित दोनों पर लागू है, और सर्वोच्च न्यायालय ने पुष्टि की है कि यह इस बात पर निर्भर नहीं करता कि 2005 के संशोधन की तारीख़ को उसके पिता जीवित थे या नहीं। वह अपना हिस्सा बाँटने की माँग कर सकती है। ध्यान दें: यह अधिनियम अनुसूचित जनजातियों पर लागू नहीं होता, जिनका उत्तराधिकार उनकी अपनी प्रथाओं से तय होता है।",
+    rights_en: [
+      "A daughter has the same right in ancestral property as a son, from birth, married or unmarried.",
+      "You can require the property to be formally divided so your share is separated out.",
+    ],
+    rights_hi: [
+      "बेटी को जन्म से ही पैतृक संपत्ति में बेटे के बराबर अधिकार है, विवाहित हो या अविवाहित।",
+      "आप संपत्ति का विधिवत बँटवारा करवा सकती हैं ताकि आपका हिस्सा अलग हो जाए।",
+    ],
+    steps_en: [
+      "Collect the property documents and a family tree showing how you are related.",
+      "Send a written notice asking for partition. If it is refused, file a partition suit.",
+    ],
+    steps_hi: [
+      "संपत्ति के दस्तावेज़ और आपका रिश्ता दिखाने वाला वंश-वृक्ष इकट्ठा कीजिए।",
+      "बँटवारे की लिखित माँग भेजिए। मना करने पर बँटवारे का मुकदमा दायर कीजिए।",
+    ],
     category: "family",
     beneficiaryTags: ["women"],
     stateScope: "IN",
@@ -451,6 +598,22 @@ export const LAWS: LawSource[] = [
       "An FIR — a First Information Report, the written record that starts a police investigation — must be registered when you report a serious offence. You can report it at any police station regardless of where the offence happened; that is called a Zero FIR, and it is then transferred to the right station. You can also report electronically. You are entitled to a free copy of the FIR. If a station refuses, you can send your complaint in writing to the Superintendent of Police, or approach a Magistrate directly.",
     plain_hi:
       "एफ़आईआर — प्रथम सूचना रिपोर्ट, वह लिखित दर्ज जिससे पुलिस जाँच शुरू होती है — गंभीर अपराध की सूचना देने पर दर्ज होनी ही चाहिए। आप किसी भी थाने में सूचना दे सकते हैं, चाहे अपराध कहीं भी हुआ हो; इसे ज़ीरो एफ़आईआर कहते हैं, और फिर वह सही थाने भेज दी जाती है। आप इलेक्ट्रॉनिक रूप से भी सूचना दे सकते हैं। आपको एफ़आईआर की निःशुल्क प्रति पाने का हक़ है। अगर थाना मना करता है, तो आप लिखित शिकायत पुलिस अधीक्षक को भेज सकते हैं, या सीधे मजिस्ट्रेट के पास जा सकते हैं।",
+    rights_en: [
+      "The police must register an FIR — the written record that starts an investigation — for a serious offence.",
+      "You can report at any police station as a Zero FIR, wherever the offence happened, and you are entitled to a free copy.",
+    ],
+    rights_hi: [
+      "गंभीर अपराध के लिए पुलिस को एफ़आईआर — वह लिखित दर्ज जिससे जाँच शुरू होती है — दर्ज करनी ही होगी।",
+      "अपराध कहीं भी हुआ हो, आप किसी भी थाने में ज़ीरो एफ़आईआर करा सकते हैं, और आपको निःशुल्क प्रति पाने का हक़ है।",
+    ],
+    steps_en: [
+      "Write your complaint in plain words with dates, places, and names, and keep a copy for yourself.",
+      "If the station refuses, send the same complaint in writing to the Superintendent of Police, or approach a Magistrate directly.",
+    ],
+    steps_hi: [
+      "अपनी शिकायत सादे शब्दों में तारीख़, जगह, और नामों के साथ लिखिए, और एक प्रति अपने पास रखिए।",
+      "थाना मना करे तो वही शिकायत लिखित में पुलिस अधीक्षक को भेजिए, या सीधे मजिस्ट्रेट के पास जाइए।",
+    ],
     category: "safety",
     beneficiaryTags: ["allCitizens"],
     stateScope: "IN",
@@ -507,6 +670,22 @@ export const LAWS: LawSource[] = [
       "A woman facing violence, threats, or abuse at home can apply to a Magistrate for orders that work together: a protection order stopping the abuse and contact, a residence order letting her stay in the shared household and stopping her being thrown out, a monetary relief order for expenses and lost earnings, and custody of her children. A Protection Officer or a service provider can file the application for her, and the court is expected to decide within sixty days. Abuse here includes physical, sexual, verbal, emotional, and economic abuse.",
     plain_hi:
       "घर में हिंसा, धमकी, या दुर्व्यवहार का सामना कर रही महिला मजिस्ट्रेट के पास ऐसे आदेशों के लिए आवेदन कर सकती है जो साथ मिलकर काम करते हैं: दुर्व्यवहार और संपर्क रोकने वाला संरक्षण आदेश, साझा घर में रहने देने और बाहर निकाले जाने से रोकने वाला निवास आदेश, ख़र्च और गई कमाई के लिए आर्थिक राहत का आदेश, और बच्चों की अभिरक्षा। संरक्षण अधिकारी या सेवा प्रदाता उसकी ओर से आवेदन दायर कर सकते हैं, और अदालत से साठ दिन में फ़ैसला अपेक्षित है। यहाँ दुर्व्यवहार में शारीरिक, यौन, मौखिक, भावनात्मक, और आर्थिक दुर्व्यवहार शामिल हैं।",
+    rights_en: [
+      "You can get a protection order stopping the abuse and the contact, and a residence order letting you stay in your home.",
+      "You can claim money for expenses and lost earnings, and custody of your children. Abuse includes verbal, emotional, and economic abuse, not only physical.",
+    ],
+    rights_hi: [
+      "आपको दुर्व्यवहार और संपर्क रोकने वाला संरक्षण आदेश, और अपने घर में रहने देने वाला निवास आदेश मिल सकता है।",
+      "आप ख़र्च और गई कमाई के पैसे, और बच्चों की अभिरक्षा माँग सकती हैं। दुर्व्यवहार में केवल शारीरिक नहीं, मौखिक, भावनात्मक, और आर्थिक भी शामिल है।",
+    ],
+    steps_en: [
+      "Contact the Protection Officer in your district. They can file the application for you, free of cost.",
+      "Keep any medical records, messages, or photographs — they help, but you can apply without them.",
+    ],
+    steps_hi: [
+      "अपने ज़िले के संरक्षण अधिकारी से संपर्क कीजिए। वे आपके लिए निःशुल्क आवेदन दायर कर सकते हैं।",
+      "कोई भी मेडिकल रिपोर्ट, संदेश, या तस्वीरें रखिए — ये मदद करती हैं, लेकिन इनके बिना भी आप आवेदन कर सकती हैं।",
+    ],
     category: "safety",
     beneficiaryTags: ["women", "children"],
     stateScope: "IN",
@@ -568,6 +747,22 @@ export const LAWS: LawSource[] = [
       "You can request information from any public authority by a simple written application — on plain paper, in English, Hindi, or the local language — with a fee of ten rupees. You do not have to give a reason for wanting it. The office must reply within thirty days, or within forty-eight hours if the information concerns someone's life or liberty. If you are below the poverty line, there is no fee at all. If they refuse or stay silent, you can appeal.",
     plain_hi:
       "आप किसी भी लोक प्राधिकरण से एक सादे लिखित आवेदन से जानकारी माँग सकते हैं — सादे कागज़ पर, अंग्रेज़ी, हिंदी, या स्थानीय भाषा में — दस रुपये शुल्क के साथ। आपको कारण बताने की ज़रूरत नहीं है। दफ़्तर को तीस दिन में जवाब देना होगा, और अगर जानकारी किसी के जीवन या स्वतंत्रता से जुड़ी है तो अड़तालीस घंटे में। अगर आप गरीबी रेखा से नीचे हैं, तो कोई शुल्क नहीं लगता। मना करने या चुप रहने पर आप अपील कर सकते हैं।",
+    rights_en: [
+      "You can ask any public authority for information without giving any reason for wanting it.",
+      "You must get a reply within 30 days, or within 48 hours if it concerns someone's life or liberty. Silence counts as refusal and can be appealed.",
+    ],
+    rights_hi: [
+      "आप किसी भी लोक प्राधिकरण से जानकारी माँग सकते हैं, और कारण बताने की ज़रूरत नहीं है।",
+      "जवाब 30 दिन में मिलना चाहिए, और किसी के जीवन या स्वतंत्रता से जुड़ा हो तो 48 घंटे में। चुप्पी को इनकार माना जाता है और उस पर अपील हो सकती है।",
+    ],
+    steps_en: [
+      "Write your questions plainly on any paper, addressed to the Public Information Officer of that office.",
+      "Pay the ten rupee fee — nothing at all if you are below the poverty line — and keep the receipt.",
+    ],
+    steps_hi: [
+      "अपने सवाल किसी भी कागज़ पर सादे शब्दों में लिखिए, उस दफ़्तर के लोक सूचना अधिकारी के नाम।",
+      "दस रुपये शुल्क दीजिए — गरीबी रेखा से नीचे हों तो कुछ भी नहीं — और रसीद अपने पास रखिए।",
+    ],
     category: "documents",
     beneficiaryTags: ["allCitizens"],
     stateScope: "IN",
@@ -617,6 +812,22 @@ export const LAWS: LawSource[] = [
       "You can apply to the certifying authority in your district for a certificate of disability, and it must be issued within a month of the assessment. The certificate is valid across all of India, so you do not need a new one in each state, and it is what you use to claim reservations in education and government jobs, travel concessions, and welfare schemes. If your application is rejected, the reason must be given in writing and you can appeal.",
     plain_hi:
       "आप अपने ज़िले के प्रमाणन प्राधिकारी के पास दिव्यांगता प्रमाण पत्र के लिए आवेदन कर सकते हैं, और मूल्यांकन के एक महीने के भीतर वह जारी होना चाहिए। यह प्रमाण पत्र पूरे भारत में मान्य है, इसलिए हर राज्य में नया लेने की ज़रूरत नहीं, और इसी से आप शिक्षा और सरकारी नौकरियों में आरक्षण, यात्रा में छूट, और कल्याण योजनाओं का दावा करते हैं। आवेदन ठुकराए जाने पर कारण लिखित में देना होगा और आप अपील कर सकते हैं।",
+    rights_en: [
+      "Your disability certificate must be issued within one month of the assessment, and it is valid across all of India.",
+      "It is what unlocks reservations in education and government jobs, travel concessions, and welfare schemes. A refusal must be explained in writing.",
+    ],
+    rights_hi: [
+      "आपका दिव्यांगता प्रमाण पत्र मूल्यांकन के एक महीने के भीतर जारी होना चाहिए, और यह पूरे भारत में मान्य है।",
+      "इसी से शिक्षा और सरकारी नौकरियों में आरक्षण, यात्रा में छूट, और कल्याण योजनाएँ मिलती हैं। इनकार का कारण लिखित में देना होगा।",
+    ],
+    steps_en: [
+      "Apply through the UDID portal, or at your district's certifying medical authority.",
+      "Take your identity proof and any existing medical records to the assessment.",
+    ],
+    steps_hi: [
+      "यूडीआईडी पोर्टल के ज़रिए, या अपने ज़िले के प्रमाणन चिकित्सा प्राधिकारी के पास आवेदन कीजिए।",
+      "मूल्यांकन के समय अपना पहचान प्रमाण और कोई भी मौजूदा मेडिकल रिपोर्ट साथ ले जाइए।",
+    ],
     category: "documents",
     beneficiaryTags: ["personsWithDisability"],
     stateScope: "IN",

@@ -10,18 +10,19 @@ import {
   MessageSquare,
   Send,
   Mic,
-  Banknote,
-  Home,
-  Briefcase,
-  Users,
-  ShieldAlert,
-  FileBadge,
 } from "lucide-react";
-import { useState, type ComponentType } from "react";
+import { useCallback, useRef, useState, type FormEvent } from "react";
 
-import orb from "@/assets/orb.png";
+import { CategoryTiles } from "@/components/chat/CategoryTiles";
+import { MessageList } from "@/components/chat/MessageList";
+import { ScenarioPills } from "@/components/chat/ScenarioPills";
+import { useChat } from "@/components/chat/useChat";
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
+import { Logo } from "@/components/layout/Logo";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Wordmark } from "@/components/layout/Wordmark";
+import { CATEGORY_BY_ID } from "@/data/categories";
+import type { CategoryId } from "@/data/types";
 import { useI18n } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 
@@ -47,42 +48,65 @@ export const Route = createFileRoute("/app")({
   component: Assistant,
 });
 
-type CategoryId = "consumer" | "housing" | "work" | "family" | "safety" | "documents";
-
-const CATEGORIES: {
-  id: CategoryId;
-  icon: ComponentType<{ className?: string; strokeWidth?: number }>;
-}[] = [
-  { id: "consumer", icon: Banknote },
-  { id: "housing", icon: Home },
-  { id: "work", icon: Briefcase },
-  { id: "family", icon: Users },
-  { id: "safety", icon: ShieldAlert },
-  { id: "documents", icon: FileBadge },
-];
-
-type ScenarioId = "defectiveProduct" | "unpaidWages" | "deposit";
-
-/** Seed text dropped into the composer when a scenario pill is tapped. */
-const SCENARIO_SEEDS: Record<ScenarioId, Record<"en" | "hi", string>> = {
-  defectiveProduct: {
-    en: "I bought a phone last week and it stopped working. The shop refuses to refund me.",
-    hi: "मैंने पिछले हफ़्ते एक फ़ोन खरीदा और वह बंद हो गया। दुकानदार पैसे लौटाने से मना कर रहा है।",
-  },
-  unpaidWages: {
-    en: "My employer has not paid my wages for two months.",
-    hi: "मेरे मालिक ने दो महीने से मेरी मज़दूरी नहीं दी है।",
-  },
-  deposit: {
-    en: "I moved out of my rented house but my landlord is keeping my security deposit.",
-    hi: "मैंने किराये का मकान छोड़ दिया लेकिन मकान मालिक मेरी जमा राशि रोक रहा है।",
-  },
-};
-
 function Assistant() {
   const { t, locale } = useI18n();
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | null>(null);
   const [draft, setDraft] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const { messages, phase, send, clear } = useChat({ locale });
+  const isIdle = messages.length === 0;
+  const isGenerating = phase !== "idle" && phase !== "done";
+
+  // Submit handler — used by form, tiles, and pills
+  const submit = useCallback(
+    (text: string) => {
+      const trimmed = text.trim();
+      if (!trimmed) return;
+      send(trimmed);
+      setDraft("");
+      setSelectedCategory(null);
+    },
+    [send],
+  );
+
+  const handleFormSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    submit(draft);
+  };
+
+  // Category tile taps fill AND submit the seed question
+  const handleCategorySelect = useCallback(
+    (id: CategoryId | null) => {
+      if (id === selectedCategory) {
+        setSelectedCategory(null);
+        setDraft("");
+        return;
+      }
+      setSelectedCategory(id);
+      if (id) {
+        const seed = locale === "hi" ? CATEGORY_BY_ID[id].seed_hi : CATEGORY_BY_ID[id].seed_en;
+        submit(seed);
+      }
+    },
+    [selectedCategory, locale, submit],
+  );
+
+  // Scenario pills submit immediately
+  const handleScenarioSelect = useCallback(
+    (text: string) => {
+      submit(text);
+    },
+    [submit],
+  );
+
+  // New conversation
+  const handleNewChat = useCallback(() => {
+    clear();
+    setDraft("");
+    setSelectedCategory(null);
+    inputRef.current?.focus();
+  }, [clear]);
 
   // Sidebar destinations arrive in a later task; until the routes exist these
   // are marked aria-disabled rather than linking to a 404.
@@ -115,10 +139,7 @@ function Assistant() {
             <button
               type="button"
               className="flex items-center gap-3 rounded-xl px-3.5 py-3 text-left text-[15px] transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-              onClick={() => {
-                setDraft("");
-                setSelectedCategory(null);
-              }}
+              onClick={handleNewChat}
             >
               <MessageSquarePlus
                 className="size-[18px] text-foreground/80"
@@ -183,7 +204,7 @@ function Assistant() {
         </aside>
 
         {/* Main canvas */}
-        <main className="canvas-gradient min-h-[860px] flex-1 rounded-[28px] p-5 sm:p-8">
+        <main className="canvas-gradient flex min-h-[860px] flex-1 flex-col rounded-[28px] p-5 sm:p-8">
           <header className="flex items-center justify-between gap-3">
             <Link
               to="/"
@@ -192,6 +213,7 @@ function Assistant() {
               <Wordmark className="text-base" />
             </Link>
             <div className="ml-auto flex items-center gap-2 sm:gap-3">
+              <ThemeToggle />
               <LanguageToggle />
               <button
                 type="button"
@@ -214,58 +236,40 @@ function Assistant() {
             </div>
           </header>
 
-          <section className="mt-12 text-center sm:mt-14">
-            <img
-              src={orb}
-              alt=""
-              width={512}
-              height={512}
-              className="mx-auto size-[104px] drop-shadow-[0_14px_30px_oklch(0.6_0.12_290/0.35)]"
-            />
-            <h1 className="mx-auto mt-6 max-w-[520px] text-[26px] font-medium leading-[1.28] tracking-tight text-foreground sm:text-[30px]">
-              {t.chat.welcomeTitle}
-            </h1>
-            <p className="mx-auto mt-3 max-w-[460px] text-sm text-muted-foreground">
-              {t.chat.welcomeSubtitle}
-            </p>
-          </section>
+          {/* Welcome state: orb + tiles + pills */}
+          {isIdle && (
+            <>
+              <section className="mt-12 text-center sm:mt-14">
+                <Logo
+                  size="md"
+                  className="mx-auto drop-shadow-[0_14px_30px_oklch(0.55_0.12_70/0.35)]"
+                />
+                <h1 className="mx-auto mt-6 max-w-[520px] text-[26px] font-medium leading-[1.28] tracking-tight text-foreground sm:text-[30px]">
+                  {t.chat.welcomeTitle}
+                </h1>
+                <p className="mx-auto mt-3 max-w-[460px] text-sm text-muted-foreground">
+                  {t.chat.welcomeSubtitle}
+                </p>
+              </section>
 
-          {/* Category tiles — the six legal areas. Wired to the engine in a later task. */}
-          <section className="mx-auto mt-9 max-w-[660px]">
-            <h2 className="sr-only">{t.chat.categoriesLabel}</h2>
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-              {CATEGORIES.map(({ id, icon: Icon }) => {
-                const active = selectedCategory === id;
-                return (
-                  <button
-                    key={id}
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => setSelectedCategory(active ? null : id)}
-                    className={cn(
-                      "flex flex-col items-center gap-3 rounded-2xl px-2 py-5 shadow-[0_2px_10px_oklch(0.5_0.05_265/0.07)] transition hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
-                      active ? "bg-tile-active" : "bg-card",
-                    )}
-                  >
-                    <span
-                      className={cn(
-                        "grid size-9 place-items-center rounded-full",
-                        active ? "bg-primary text-primary-foreground" : "text-foreground/80",
-                      )}
-                    >
-                      <Icon className="size-[18px]" strokeWidth={1.7} />
-                    </span>
-                    <span className="text-center text-[12px] leading-tight">
-                      {t.categories[id]}
-                    </span>
-                  </button>
-                );
-              })}
+              <CategoryTiles selected={selectedCategory} onSelect={handleCategorySelect} />
+            </>
+          )}
+
+          {/* Conversation state: messages */}
+          {!isIdle && (
+            <div className="mt-6 flex-1 overflow-y-auto">
+              <MessageList messages={messages} />
             </div>
-          </section>
+          )}
 
-          {/* Composer */}
-          <div className="mx-auto mt-8 max-w-[660px] overflow-hidden rounded-3xl bg-card shadow-[0_4px_24px_oklch(0.5_0.05_265/0.1)]">
+          {/* Composer — always visible at the bottom */}
+          <div
+            className={cn(
+              "mx-auto w-full max-w-[660px] overflow-hidden rounded-3xl bg-card shadow-[0_4px_24px_oklch(0.5_0.05_265/0.1)]",
+              isIdle ? "mt-8" : "mt-auto pt-4",
+            )}
+          >
             <p className="flex items-center justify-between gap-3 border-b border-border px-5 py-3 text-xs text-muted-foreground">
               <span>{t.disclaimer.short}</span>
               <span lang={locale} className="shrink-0">
@@ -273,21 +277,24 @@ function Assistant() {
               </span>
             </p>
 
-            <div className="flex items-center gap-3 px-5 py-5">
+            <form onSubmit={handleFormSubmit} className="flex items-center gap-3 px-5 py-5">
               <label htmlFor="composer" className="sr-only">
                 {t.chat.welcomeTitle}
               </label>
               <input
+                ref={inputRef}
                 id="composer"
                 value={draft}
                 onChange={(e) => setDraft(e.target.value)}
                 placeholder={t.chat.placeholder}
-                className="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-muted-foreground"
+                disabled={isGenerating}
+                className="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-muted-foreground disabled:opacity-50"
               />
               <button
                 type="button"
                 aria-label={t.chat.mic}
-                className="grid size-10 shrink-0 place-items-center rounded-full ring-1 ring-border transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                aria-disabled="true"
+                className="grid size-10 shrink-0 cursor-not-allowed place-items-center rounded-full ring-1 ring-border transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 <Mic
                   className="size-[18px] text-foreground/80"
@@ -296,31 +303,17 @@ function Assistant() {
                 />
               </button>
               <button
-                type="button"
+                type="submit"
+                disabled={!draft.trim() || isGenerating}
                 aria-label={t.chat.send}
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
                 <Send className="size-[17px]" strokeWidth={1.7} aria-hidden="true" />
               </button>
-            </div>
+            </form>
 
-            {/* Scenario pills — tap to fill the composer for someone who cannot
-                phrase a legal problem from a blank box. */}
-            <div className="px-5 pb-5">
-              <h2 className="mb-2 text-[11px] text-muted-foreground">{t.chat.scenariosLabel}</h2>
-              <div className="flex flex-wrap items-center gap-2">
-                {(Object.keys(SCENARIO_SEEDS) as ScenarioId[]).map((id) => (
-                  <button
-                    key={id}
-                    type="button"
-                    onClick={() => setDraft(SCENARIO_SEEDS[id][locale])}
-                    className="rounded-full px-3.5 py-2 text-xs ring-1 ring-border transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                  >
-                    {t.scenarios[id]}
-                  </button>
-                ))}
-              </div>
-            </div>
+            {/* Scenario pills — only in welcome state */}
+            {isIdle && <ScenarioPills onSelect={handleScenarioSelect} />}
           </div>
         </main>
       </div>

@@ -10,8 +10,10 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import orb from "@/assets/orb.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
+import { Logo } from "@/components/layout/Logo";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { useT } from "@/lib/i18n/context";
 
@@ -98,6 +100,7 @@ function Landing() {
             ))}
           </nav>
           <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <LanguageToggle />
             <a
               href="tel:112"
@@ -118,15 +121,15 @@ function Landing() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="page-gradient">
-        <div className="mx-auto max-w-[1140px] px-5 py-20 text-center sm:py-28">
-          <img
-            src={orb}
-            alt=""
-            width={512}
-            height={512}
-            className="mx-auto size-[120px] drop-shadow-[0_18px_40px_oklch(0.45_0.12_290/0.4)]"
-          />
+      <section
+        id="top"
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-white/40" />
+        <div className="relative mx-auto max-w-[1140px] px-5 py-20 text-center sm:py-28">
+          <Logo size="lg" className="mx-auto drop-shadow-[0_18px_40px_oklch(0.55_0.12_70/0.4)]" />
           <h1 className="mx-auto mt-8 max-w-[720px] text-4xl font-medium leading-[1.15] tracking-tight text-foreground sm:text-6xl">
             {t.landing.heroTitle}
           </h1>

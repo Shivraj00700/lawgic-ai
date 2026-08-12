@@ -82,7 +82,7 @@ export default defineConfig(async ({ command, mode }) => {
       host: "::",
       port: 8080,
       watch: {
-        // Debounce noisy editor saves so HMR does not fire mid-write.
+        ignored: ["**/.output/**", "**/.wrangler/**", "**/.tanstack/**", "**/.nitro/**"],
         awaitWriteFinish: { stabilityThreshold: 1000, pollInterval: 100 },
       },
     },

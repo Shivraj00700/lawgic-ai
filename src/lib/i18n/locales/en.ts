@@ -89,6 +89,7 @@ export const en = {
     stopReading: "Stop reading",
     openSource: "Open official source",
     section: "Section",
+    leadIn: "Based on {act}, here is what applies to your situation.",
     confidenceLabel: "Confidence",
     confidence: {
       high: "Strong match to a verified law",

@@ -14,7 +14,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "demo": "vite-node --config vitest.config.ts scripts/demo-stream.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

@@ -1,4 +1,4 @@
-import type { CategoryId, StateCode } from "@/data/types";
+import type { CategoryId, LawSource, StateCode } from "@/data/types";
 
 /**
  * Urgency triage tiers.
@@ -55,4 +55,51 @@ export type UserProfile = {
   state?: StateCode;
   ageBand?: "under18" | "18to25" | "26to40" | "41to60" | "over60";
   gender?: "female" | "male" | "other";
+};
+
+/** A law the retriever selected, with the evidence for why. */
+export type RankedSource = {
+  law: LawSource;
+  score: number;
+  /** The terms that actually fired. Shown verbatim in the citation trace. */
+  matchedTerms: string[];
+  /** True when this law is specific to the user's own state. */
+  stateSpecific: boolean;
+};
+
+/**
+ * One line of an answer.
+ *
+ * `sourceId` is not optional. Every rendered claim must name the law it came
+ * from — that is the whole integrity promise, enforced by the type.
+ */
+export type CardBullet = {
+  text: string;
+  sourceId: string;
+};
+
+/** The plain-language text behind a card, revealed by "explain more". */
+export type ExpandedDetail = {
+  sourceId: string;
+  act: string;
+  section: string;
+  text: string;
+};
+
+export type AnswerCard = {
+  intent: Intent | null;
+  confidence: Confidence;
+  urgency: UrgencyTier;
+  rights: CardBullet[];
+  steps: CardBullet[];
+  sources: RankedSource[];
+  expandedDetail: ExpandedDetail[];
+  /** Always present, always rendered. Never a guaranteed outcome. */
+  disclaimer: string;
+  /**
+   * True when nothing matched well enough to answer. The UI shows the honest
+   * "I could not match this" message and routes straight to legal aid rather
+   * than presenting a weak guess as an answer.
+   */
+  lowConfidence: boolean;
 };

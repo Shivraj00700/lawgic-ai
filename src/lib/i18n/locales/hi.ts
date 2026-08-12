@@ -96,6 +96,7 @@ export const hi: Dictionary = {
     stopReading: "पढ़ना रोकें",
     openSource: "सरकारी स्रोत खोलें",
     section: "धारा",
+    leadIn: "{act} के आधार पर, आपकी स्थिति में यह लागू होता है।",
     confidenceLabel: "विश्वास",
     confidence: {
       high: "सत्यापित कानून से पक्का मेल",

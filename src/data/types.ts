@@ -44,6 +44,18 @@ export type LawSource = {
   title_hi: string;
   plain_en: string;
   plain_hi: string;
+  /**
+   * What the person is entitled to, as short standalone lines.
+   *
+   * These live on the LAW rather than on an intent so that every bullet the UI
+   * renders can name the source it came from. A right with no citation behind it
+   * is exactly what this product promises not to do.
+   */
+  rights_en: string[];
+  rights_hi: string[];
+  /** Concrete next actions. Imperative, and doable without a lawyer. */
+  steps_en: string[];
+  steps_hi: string[];
   category: CategoryId;
   beneficiaryTags: BeneficiaryTag[];
   stateScope: "IN" | StateCode;
