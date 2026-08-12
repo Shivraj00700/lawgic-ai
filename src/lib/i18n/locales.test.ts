@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { interpolate } from "./context";
+import { interpolate } from "./config";
 import { en } from "./locales/en";
 import { hi } from "./locales/hi";
 
@@ -63,7 +63,9 @@ describe("locale files", () => {
       }
     }
 
-    expect(untranslated, `Hindi values with no Devanagari:\n${untranslated.join("\n")}`).toEqual([]);
+    expect(untranslated, `Hindi values with no Devanagari:\n${untranslated.join("\n")}`).toEqual(
+      [],
+    );
   });
 
   it("keeps the same placeholders in both locales", () => {
@@ -86,6 +88,8 @@ describe("locale files", () => {
   });
 
   it("keeps unknown placeholders intact rather than printing undefined", () => {
-    expect(interpolate("Call {name} at {number}", { name: "Police" })).toBe("Call Police at {number}");
+    expect(interpolate("Call {name} at {number}", { name: "Police" })).toBe(
+      "Call Police at {number}",
+    );
   });
 });

@@ -210,7 +210,7 @@ export const en = {
     features: {
       citedTitle: "Every answer names its law",
       citedBody:
-        "Each card shows the Act and Section it came from. Tap \"Why this answer?\" to read the clause yourself.",
+        'Each card shows the Act and Section it came from. Tap "Why this answer?" to read the clause yourself.',
       honestTitle: "It admits what it does not know",
       honestBody:
         "When nothing matches with confidence, it says so and points you to a real legal aid officer instead of guessing.",

@@ -80,7 +80,10 @@ function Landing() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-30 border-b border-border/70 bg-background/80 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-[1140px] items-center justify-between gap-3 px-5">
-          <a href="#top" className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
+          <a
+            href="#top"
+            className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          >
             <Wordmark />
           </a>
           <nav aria-label="Sections" className="hidden items-center gap-8 md:flex">
@@ -199,7 +202,10 @@ function Landing() {
             <details key={f.q} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
                 {f.q}
-                <span aria-hidden="true" className="text-muted-foreground transition group-open:rotate-45">
+                <span
+                  aria-hidden="true"
+                  className="text-muted-foreground transition group-open:rotate-45"
+                >
                   +
                 </span>
               </summary>

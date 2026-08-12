@@ -49,7 +49,10 @@ export const Route = createFileRoute("/app")({
 
 type CategoryId = "consumer" | "housing" | "work" | "family" | "safety" | "documents";
 
-const CATEGORIES: { id: CategoryId; icon: ComponentType<{ className?: string; strokeWidth?: number }> }[] = [
+const CATEGORIES: {
+  id: CategoryId;
+  icon: ComponentType<{ className?: string; strokeWidth?: number }>;
+}[] = [
   { id: "consumer", icon: Banknote },
   { id: "housing", icon: Home },
   { id: "work", icon: Briefcase },
@@ -96,13 +99,19 @@ function Assistant() {
         {/* Sidebar */}
         <aside className="hidden w-[300px] shrink-0 flex-col gap-4 p-4 lg:flex">
           <div className="rounded-2xl bg-primary px-4 py-3.5 text-primary-foreground">
-            <Link to="/" className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
+            <Link
+              to="/"
+              className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
               <Wordmark tone="inverted" />
               <span className="mt-0.5 block text-xs font-normal opacity-75">{t.brand.tagline}</span>
             </Link>
           </div>
 
-          <nav aria-label="Main" className="flex flex-col rounded-2xl bg-card p-1.5 ring-1 ring-border">
+          <nav
+            aria-label="Main"
+            className="flex flex-col rounded-2xl bg-card p-1.5 ring-1 ring-border"
+          >
             <button
               type="button"
               className="flex items-center gap-3 rounded-xl px-3.5 py-3 text-left text-[15px] transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
@@ -111,7 +120,11 @@ function Assistant() {
                 setSelectedCategory(null);
               }}
             >
-              <MessageSquarePlus className="size-[18px] text-foreground/80" strokeWidth={1.7} aria-hidden="true" />
+              <MessageSquarePlus
+                className="size-[18px] text-foreground/80"
+                strokeWidth={1.7}
+                aria-hidden="true"
+              />
               {t.nav.newChat}
             </button>
 
@@ -121,7 +134,9 @@ function Assistant() {
                 aria-disabled={!ready}
                 className={cn(
                   "flex items-center gap-3 rounded-xl px-3.5 py-3 text-[15px]",
-                  ready ? "cursor-pointer hover:bg-secondary" : "cursor-not-allowed text-muted-foreground",
+                  ready
+                    ? "cursor-pointer hover:bg-secondary"
+                    : "cursor-not-allowed text-muted-foreground",
                 )}
               >
                 <Icon className="size-[18px] opacity-70" strokeWidth={1.7} aria-hidden="true" />
@@ -135,7 +150,10 @@ function Assistant() {
             ))}
           </nav>
 
-          <nav aria-label="Account" className="mt-auto flex flex-col rounded-2xl bg-card p-1.5 ring-1 ring-border">
+          <nav
+            aria-label="Account"
+            className="mt-auto flex flex-col rounded-2xl bg-card p-1.5 ring-1 ring-border"
+          >
             <span
               aria-disabled="true"
               className="flex cursor-not-allowed items-center gap-3 rounded-xl px-3.5 py-3 text-[15px] text-muted-foreground"
@@ -147,7 +165,11 @@ function Assistant() {
               href="mailto:hello@lawgic.example?subject=Lawgic%20AI%20feedback"
               className="flex items-center gap-3 rounded-xl px-3.5 py-3 text-[15px] transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <MessageSquare className="size-[18px] text-foreground/80" strokeWidth={1.7} aria-hidden="true" />
+              <MessageSquare
+                className="size-[18px] text-foreground/80"
+                strokeWidth={1.7}
+                aria-hidden="true"
+              />
               {t.nav.feedback}
             </a>
             <a
@@ -178,7 +200,11 @@ function Assistant() {
                 className="flex cursor-not-allowed items-center gap-2.5 rounded-full bg-card py-1.5 pl-1.5 pr-4 shadow-[0_2px_10px_oklch(0.5_0.05_265/0.08)]"
               >
                 <span className="grid size-9 place-items-center rounded-full bg-secondary">
-                  <User className="size-[18px] text-foreground/70" strokeWidth={1.7} aria-hidden="true" />
+                  <User
+                    className="size-[18px] text-foreground/70"
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                  />
                 </span>
                 <span className="hidden leading-tight sm:block">
                   <span className="block text-sm font-medium">{t.topbar.guest}</span>
@@ -229,7 +255,9 @@ function Assistant() {
                     >
                       <Icon className="size-[18px]" strokeWidth={1.7} />
                     </span>
-                    <span className="text-center text-[12px] leading-tight">{t.categories[id]}</span>
+                    <span className="text-center text-[12px] leading-tight">
+                      {t.categories[id]}
+                    </span>
                   </button>
                 );
               })}
@@ -261,7 +289,11 @@ function Assistant() {
                 aria-label={t.chat.mic}
                 className="grid size-10 shrink-0 place-items-center rounded-full ring-1 ring-border transition hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               >
-                <Mic className="size-[18px] text-foreground/80" strokeWidth={1.7} aria-hidden="true" />
+                <Mic
+                  className="size-[18px] text-foreground/80"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
               </button>
               <button
                 type="button"

@@ -34,7 +34,14 @@ describe("corpus integrity", () => {
   it.each(LAWS.map((law) => [law.id, law] as const))(
     "%s has non-empty text in both English and Hindi",
     (_id, law) => {
-      for (const field of ["title_en", "title_hi", "plain_en", "plain_hi", "act", "section"] as const) {
+      for (const field of [
+        "title_en",
+        "title_hi",
+        "plain_en",
+        "plain_hi",
+        "act",
+        "section",
+      ] as const) {
         expect(law[field].trim().length, `${law.id}.${field}`).toBeGreaterThan(0);
       }
     },
@@ -137,7 +144,9 @@ describe("corpus integrity", () => {
         `${String(new Set(LAWS.map((l) => l.act)).size).padStart(2)} acts  ` +
         `${String(LAWS.reduce((s, l) => s + l.keywords.length, 0)).padStart(3)} keywords`,
       `  beneficiary groups covered: ${[...new Set(LAWS.flatMap((l) => l.beneficiaryTags))].sort().join(", ")}`,
-      `  state-scoped entries: ${LAWS.filter((l) => l.stateScope !== "IN").map((l) => `${l.id} (${l.stateScope})`).join(", ")}`,
+      `  state-scoped entries: ${LAWS.filter((l) => l.stateScope !== "IN")
+        .map((l) => `${l.id} (${l.stateScope})`)
+        .join(", ")}`,
       "",
     ];
 

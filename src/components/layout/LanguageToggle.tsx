@@ -1,4 +1,5 @@
-import { useI18n, LOCALES, type Locale } from "@/lib/i18n/context";
+import { LOCALES, type Locale } from "@/lib/i18n/config";
+import { useI18n } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 
 const LABELS: Record<Locale, string> = { en: "English", hi: "हिंदी" };

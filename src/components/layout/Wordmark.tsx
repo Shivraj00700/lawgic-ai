@@ -19,7 +19,10 @@ export function Wordmark({
   return (
     <span className={cn("flex items-center gap-2 text-lg font-semibold", className)}>
       <Scale
-        className={cn("size-5 shrink-0", tone === "inverted" ? "text-primary-foreground" : "text-foreground")}
+        className={cn(
+          "size-5 shrink-0",
+          tone === "inverted" ? "text-primary-foreground" : "text-foreground",
+        )}
         strokeWidth={1.9}
         aria-hidden="true"
       />
