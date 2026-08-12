@@ -33,7 +33,8 @@ export default defineConfig(async ({ command, mode }) => {
   // never pays for loading it.
   if (command === "build") {
     const { nitro } = await import("nitro/vite");
-    plugins.push(nitro({ defaultPreset: "cloudflare-module" }));
+plugins.push(nitro({ defaultPreset: "vercel" }));
+
   }
 
   plugins.push(viteReact());
