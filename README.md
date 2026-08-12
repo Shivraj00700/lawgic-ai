@@ -37,10 +37,23 @@ cited answer cards with citation trace and visible confidence, emergency
 helplines, and legal-aid handoff. English and Hindi. Voice input and read-aloud.
 A read-only Know-Your-Rights library. Session-only history.
 
-**Sample data, 6 categories, 12 laws.** The corpus is hand-curated across
-Consumer & Money, Housing & Property, Work & Wages, Family, Safety & Crime, and
-Documents & Entitlements. It is a demonstration set, not a complete index of
-Indian law.
+**Sample data, 6 categories, 12 laws, 10 Acts.** The corpus is hand-curated
+across Consumer & Money, Housing & Property, Work & Wages, Family, Safety &
+Crime, and Documents & Entitlements — two entries per category, each linking to
+its official text on the Government of India's
+[India Code](https://www.indiacode.nic.in/) portal. It is a demonstration set,
+not a complete index of Indian law.
+
+Beneficiary groups currently tagged: all citizens, women, children, senior
+citizens, persons with disability, workers, tenants, and consumers. **Scheduled
+Castes and Scheduled Tribes are named in the brief but are not covered by this
+12-law set** — the SC/ST (Prevention of Atrocities) Act, 1989 and the Forest
+Rights Act, 2006 are the obvious next entries. Saying so plainly is more useful
+than implying coverage that is not there.
+
+One entry is deliberately state-scoped (the Maharashtra Rent Control Act, 1999)
+so that state-specific ranking is a real, demonstrable behaviour rather than an
+untested code path.
 
 **Roadmap, not built:** the KYR library as a fully searchable and filterable
 index of central and state legislation, additional regional languages, legal
